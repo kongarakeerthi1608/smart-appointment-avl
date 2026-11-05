@@ -1,4 +1,6 @@
-const BASE = '/api'
+const BASE = import.meta.env.PROD
+  ? 'https://smart-appointment-avl.onrender.com/api'
+  : '/api'
 
 export class ApiError extends Error {
   constructor(message, status, fieldErrors = {}) {
